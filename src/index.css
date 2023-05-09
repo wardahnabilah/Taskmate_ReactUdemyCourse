@@ -149,6 +149,7 @@ header .themeSelector .activeTheme{
   border-bottom: 1px solid #dfdfdf;
   display: flex;
   align-items: center;
+  text-align: left;
 }
 
 .showTask p.head span:first-child{
@@ -210,6 +211,7 @@ header .themeSelector .activeTheme{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .showTask li .name{

@@ -1,3 +1,5 @@
+import TodoItem from "./TodoItem";
+
 export default function ShowTask() {
     return (
         <section className="showTask">
@@ -8,6 +10,9 @@ export default function ShowTask() {
                 </span>
                 <span className="clearAll">Clear All</span>
             </p>
+            <ul>
+                <TodoItem />
+            </ul>
         </section>
     )
 }
