@@ -8,9 +8,17 @@ function App() {
   // Create state for storing tasks
   const [tasks, setTasks] = useState([])
 
+  // Add new task
   function addTask(newTask) {
     setTasks(prev => {
       return [...prev, newTask]
+    })
+  }
+
+  // Delete task
+  function deleteTask(id) {
+    setTasks(() => {
+      return tasks.filter(task => task.id !== id)
     })
   }
   
@@ -18,7 +26,7 @@ function App() {
     <div className="App">
       <Header />
       <AddTask addTask={addTask}/>
-      <ShowTask tasks={tasks}/>
+      <ShowTask delete={deleteTask} tasks={tasks}/>
     </div>
   );
 }
