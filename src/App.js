@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddTask from './components/AddTask';
 import Header from './components/Header';
 import ShowTask from './components/ShowTask';
@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   // Create state for storing tasks
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || [])
   // Is being updated or not
   const [isUpdated, setIsUpdated] = useState(false)
   // Create state for task being updated
@@ -16,6 +16,10 @@ function App() {
     task: "",
     time: ""
 })
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+  }, [tasks])
 
   // Add new task
   function addTask(newTask) {
