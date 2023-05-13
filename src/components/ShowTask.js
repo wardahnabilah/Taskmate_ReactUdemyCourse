@@ -8,7 +8,7 @@ export default function ShowTask(props) {
                     <span className="title">Todo</span>
                     <span className="count">{props.tasks.length}</span>
                 </span>
-                <span className="clearAll">Clear All</span>
+                <span onClick={() => props.clearAll()}className="clearAll">Clear All</span>
             </p>
             <ul>
                 {props.tasks.map(task => {

@@ -49,11 +49,16 @@ function App() {
     setIsUpdated(false)
   }
 
+  // Clear all tasks
+  function clearAll() {
+    setTasks([])
+  }
+
   return (
     <div className="App">
       <Header />
       {isUpdated === true ? <UpdateTask submitUpdatedTask={submitUpdatedTask} taskBeingUpdated={taskBeingUpdated}/> : <AddTask addTask={addTask}/>}
-      <ShowTask update={updateTask} delete={deleteTask} tasks={tasks}/>
+      <ShowTask clearAll={clearAll} update={updateTask} delete={deleteTask} tasks={tasks}/>
     </div>
   );
 }
