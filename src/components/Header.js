@@ -1,19 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import logo from '../assets/logo.svg'
 
 export default function Header() {
-    const [theme, setTheme] = useState("light")
-    
-    // Change theme
-    function changeTheme(event) {
-        const chosenTheme = event.target.dataset.theme
-        setTheme(chosenTheme)
+    const [theme, setTheme] = useState(JSON.parse(localStorage.getItem("theme")) || "light")
+
+    // Store selected theme in local storage
+    useEffect(() => {
+        localStorage.setItem("theme", JSON.stringify(theme))
 
         const htmlElement = document.documentElement
         // Remove previous class for theme
         htmlElement.removeAttribute("class")
         // Add new theme class
-        htmlElement.classList.add(chosenTheme)
+        htmlElement.classList.add(theme)
+    }, [theme])
+    
+    // Change theme
+    function changeTheme(event) {
+        const chosenTheme = event.target.dataset.theme
+        setTheme(chosenTheme)
     }
 
     return (
