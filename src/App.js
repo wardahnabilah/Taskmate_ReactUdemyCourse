@@ -38,7 +38,6 @@ function App() {
     // Store task being updated
     const taskBeingUpdated = tasks.find(task => task.id === id)
     setTaskBeingUpdated(taskBeingUpdated)
-    console.log(taskBeingUpdated);
   }
 
   // Store updated task

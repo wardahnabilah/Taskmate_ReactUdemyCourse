@@ -1,8 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function UpdateTask(props) {
     // Create state for updated task
     const [updatedTask, setUpdatedTask] = useState(props.taskBeingUpdated)
+
+    useEffect(() => {
+        setUpdatedTask(props.taskBeingUpdated)
+    }, [props.taskBeingUpdated])
 
     function handleChange(event) {
         const date = new Date()
