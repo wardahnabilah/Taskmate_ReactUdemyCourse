@@ -18,6 +18,7 @@ export default function ShowTask(props) {
                         task={task.task}
                         time={task.time}
                         delete={props.delete}
+                        update={props.update}
                     />
                 })}
             </ul>
