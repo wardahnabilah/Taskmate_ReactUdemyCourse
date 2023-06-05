@@ -47,7 +47,7 @@ function App() {
   // Store updated task
   function submitUpdatedTask(updatedTask) {
     setTasks(tasks.map(task => {
-      return task.id == updatedTask.id ? updatedTask : task
+      return task.id === updatedTask.id ? updatedTask : task
     }))
 
     setIsUpdated(false)
