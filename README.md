@@ -9,4 +9,4 @@ Taskmate is a todo list react application and build using **useState Hook**, **u
 - Delete task
 - Change background theme
 
-### See Taskmate Website: [(https://taskmate-reactcrud.netlify.app)]
+### See the website: https://taskmate-reactcrud.netlify.app
